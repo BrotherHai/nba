@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="referrer" content="never">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="keywords" content="qm 凤楼 楼凤 约炮 小姐 桑拿 爱爱 打飞机 约会 qm 凤楼 yuepao 小姐 桑拿 爱爱 打飞机 你懂的 全国 qm 凤楼  小姐 桑拿 爱爱 打飞机">
+  <meta name="description"
+    content="qm 凤楼 楼凤 小姐 桑拿 爱爱 打飞机 全国外围 nba99.vercel.app是汇集全国各地小姐的全国外围社区平台、每天更新大量学生妹、白领、良家等美女资料信息、QQ群、老司机网址,为您排解独自一人时候的孤单寂寞。">
+  <title>全国外围社区 楼凤 凤楼 北京 上海 广州 深圳 佛山 珠海 天津 杭州 成都 南京 重庆 等各大城市小姐姐信息</title>
+  <link rel="shortcut icon" href="./images/bitbug_favicon.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" href="./css/Global.css">
+  <!-- 引入样式 -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <!-- 引入组件库 -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/vue@v2/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/vue-router@v2/dist/vue-router.min.js"></script>
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script src="https://unpkg.com/element-china-area-data@5.0.2/dist/app.js"></script>
+  <script src="http://demo.haoji.me/2017/02/08-js-xlsx/js/xlsx.core.min.js"></script>
+  <script type="text/javascript" src="https://hm.baidu.com/hm.js?cd68aed6f860296e109c315b155e58e8"></script>
+  <script src="./js/Global.js"></script>
+</head>
+
+<body>
+  <div id="mainBox">
+    <div class="head">
+      <h1><img src="./images/files.png" alt="文件夹"><a href="./"
+          title="全国外围社区 楼凤 凤楼 北京 上海 广州 深圳 佛山 珠海 天津 杭州 成都 南京 重庆 等各大城市小姐姐信息">{{cityname}}小姐姐信息</a>
+      </h1>
+    </div>
+    <div class="mainBox">
+      <el-dialog :title="dialogData.Name" :visible.sync="dialogVisible" width="60%">
+
+        <el-form ref="form" :model="dialogData" label-width="120px" size="mini">
+          <el-form-item label="Id">
+            <span>{{dialogData.Id}}</span>
+          </el-form-item>
+          <el-form-item label="QQ">
+            <el-button type="success" v-if='dialogData.QQ' round v-copy="dialogData.QQ">{{dialogData.QQ}}</el-button>
+          </el-form-item>
+          <el-form-item label="Weixin">
+            <el-button type="success" v-if='dialogData.Weixin' round v-copy="dialogData.Weixin">{{dialogData.Weixin}}
+            </el-button>
+          </el-form-item>
+          <el-form-item label="Phone">
+            <el-button type="success" v-if='dialogData.Phone' round v-copy="dialogData.Phone">{{dialogData.Phone}}
+            </el-button>
+          </el-form-item>
+          <el-form-item label="JianJie">
+            <span>{{dialogData.JianJie}}</span>
+          </el-form-item>
+          <el-form-item label="Price">
+            <span>{{dialogData.Price}}</span>
+          </el-form-item>
+          <el-form-item label="FuWu">
+            <span>{{dialogData.FuWu}}</span>
+          </el-form-item>
+          <el-form-item label="Address">
+            <span>{{dialogData.Address}}</span>
+          </el-form-item>
+          <el-form-item label="City">
+            <span>{{dialogData.City}}</span>
+          </el-form-item>
+          <el-form-item label="Remark">
+            <span>{{dialogData.Remark}}</span>
+          </el-form-item>
+          <!-- <el-form-item label="Status">
+            <span>{{dialogData.Status}}</span>
+          </el-form-item> -->
+          <!-- <el-form-item label="UserId">
+            <span>{{dialogData.UserId}}</span>
+          </el-form-item> -->
+          <!-- <el-form-item label="CreateTime">
+            <span>{{dialogData.CreateTime}}</span>
+          </el-form-item> -->
+          <el-form-item label="CreateTimeStr">
+            <span>{{dialogData.CreateTimeStr}}</span>
+          </el-form-item>
+          <!-- <el-form-item label="Money">
+            <span>{{dialogData.Money}}</span>
+          </el-form-item>
+          <el-form-item label="InfoType">
+            <span>{{dialogData.InfoType}}</span>
+          </el-form-item>
+          <el-form-item label="ClickTime">
+            <span>{{dialogData.ClickTime}}</span>
+          </el-form-item>
+          <el-form-item label="GoodTime">
+            <span>{{dialogData.GoodTime}}</span>
+          </el-form-item>
+          <el-form-item label="BadTime">
+            <span>{{dialogData.BadTime}}</span>
+          </el-form-item>
+          <el-form-item label="ErrorTime">
+            <span>{{dialogData.ErrorTime}}</span>
+          </el-form-item>
+          <el-form-item label="QueryTags">
+            <span>{{dialogData.QueryTags}}</span>
+          </el-form-item>
+          <el-form-item label="IsDelete">
+            <span>{{dialogData.IsDelete}}</span>
+          </el-form-item> -->
+          <!-- <el-form-item label="CommentCount">
+            <span>{{dialogData.CommentCount}}</span>
+          </el-form-item>
+          <el-form-item label="UserName">
+            <span>{{dialogData.UserName}}</span>
+          </el-form-item>
+          <el-form-item label="UserMoney">
+            <span>{{dialogData.UserMoney}}</span>
+          </el-form-item>
+          <el-form-item label="HeadImg">
+            <span>{{dialogData.HeadImg}}</span>
+          </el-form-item> -->
+          <!-- <el-form-item label="LastCommentTime">
+            <span>{{dialogData.LastCommentTime}}</span>
+          </el-form-item> -->
+          <el-form-item label="Pic1">
+            <span>
+              <el-image style="width: 100px; height: 100px" v-if='dialogData.Pic1' :src="fileServer+dialogData.Pic1"
+                :preview-src-list="[`${fileServer+dialogData.Pic1}`]">>
+              </el-image>
+            </span>
+          </el-form-item>
+          <el-form-item label="Pic2">
+            <span>
+              <el-image style="width: 100px; height: 100px" v-if='dialogData.Pic2' :src="fileServer+dialogData.Pic2"
+                :preview-src-list="[`${fileServer+dialogData.Pic2}`]">>
+              </el-image>
+            </span>
+          </el-form-item>
+        </el-form>
+        <span slot="footer" class="dialog-footer">
+          <el-button @click="dialogVisible = false">取 消</el-button>
+          <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+        </span>
+      </el-dialog>
+      <el-container style="height: 85vh; border: 1px solid #eee">
+        <el-aside width="200px" v-if="showLeft" style="background-color: rgb(238, 241, 246)">
+          <el-menu :default-openeds="['province']">
+            <el-submenu index="province">
+              <template slot="title"><i class="el-icon-message"></i>省级</template>
+              <el-menu-item-group v-for="item in province">
+                <el-menu-item :index="item.code" @click="_queryInfo('province',item.name)">{{item.name}}
+                </el-menu-item>
+              </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="city">
+              <template slot="title"><i class="el-icon-message"></i>市级</template>
+              <el-menu-item-group v-for="(item,key) in city" :key="key">
+                <el-menu-item :index="key+item2.code" v-for="item2 in item" v-show="item2.name && item2.name !='市辖区'"
+                  @click="_queryInfo('city',item2.name)">
+                  {{item2.name}}
+                </el-menu-item>
+              </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="area">
+              <template slot="title"><i class="el-icon-message"></i>区级</template>
+              <el-menu-item-group v-for="(item,key) in area" :key="key">
+                <el-menu-item :index="key+item2.code" v-for="item2 in item" v-show="item2.name && item2.name !='市辖区'"
+                  @click="_queryInfo('area',item2.name)">
+                  {{item2.name}}
+                </el-menu-item>
+              </el-menu-item-group>
+            </el-submenu>
+          </el-menu>
+        </el-aside>
+
+        <el-container>
+          <el-main style="height:80vh">
+            <el-header>
+              <el-button @click="showLeft = !showLeft" type="success"
+                :icon="showLeft?'el-icon-d-arrow-left':'el-icon-d-arrow-right'" circle></el-button>
+              <el-cascader :options="areaSelectData" @change="handleChange" class="full-width" size="large"
+                v-model="selectedOptions" placeholder="请选择您所在的城市" />
+            </el-header>
+            <el-tabs v-loading="loading" element-loading-text="拼命加载中" element-loading-spinner="el-icon-loading"
+              element-loading-background="rgba(0, 0, 0, 0.8)" v-model="activeName" @tab-click="handlexls">
+              <el-tab-pane label="表格" name="table">
+                <el-table :data="tableData" style="width: 100%" height="70vh"
+                  :header-cell-style="{ 'text-align': 'center' }" :cell-style="{ 'text-align': 'center' }">
+                  <el-table-column prop="Name" label="个人信息" width="320">
+                  </el-table-column>
+                  <el-table-column prop="Price" label="交易价格">
+                  </el-table-column>
+                  <!-- <el-table-column prop="Address" label="居住地址" width="140">
+                  </el-table-column> -->
+                  <!--                                <el-table-column prop="Phone" label="手机号码" width="120">-->
+                  <!--                                </el-table-column>-->
+                  <!--                                <el-table-column label="QQ/VX" show-overflow-tooltip width="200">-->
+                  <!--                                    <template slot-scope="scope">-->
+                  <!--                                        <el-tag type="success" v-show="scope.row.QQ" effect="dark">-->
+                  <!--                                            QQ : {{scope.row.QQ}}-->
+                  <!--                                        </el-tag>-->
+                  <!--                                        <el-divider v-show="scope.row.QQ  && scope.row.Weixin"></el-divider>-->
+                  <!--                                        <el-tag type="success" v-show="scope.row.Weixin" effect="dark">-->
+                  <!--                                            WX : {{scope.row.Weixin}}-->
+                  <!--                                        </el-tag>-->
+                  <!--                                    </template>-->
+                  <!--                                </el-table-column>-->
+                  <!--                                </el-table-column>-->
+                  <!--                                </el-table-column>-->
+                  <!--                                <el-table-column prop="JianJie" width="500" show-overflow-tooltip label="个人简介">-->
+                  <!--                                </el-table-column>-->
+                  <el-table-column prop="FuWu" width="200" show-overflow-tooltip label="个人服务">
+                  </el-table-column>
+                  <el-table-column prop="Phone" label="个人照片">
+                    <template slot-scope="scope">
+                      <el-image style="width: 100px; height: 100px" v-if='scope.row.Pic1' :src="fileServer+scope.row.Pic1"
+                        :preview-src-list="[`${fileServer+scope.row.Pic1}`]">
+                      </el-image>
+                      <el-image style="width: 100px; height: 100px" v-if='scope.row.Pic2' :src="fileServer+scope.row.Pic2"
+                        :preview-src-list="[`${fileServer+scope.row.Pic2}`]">>
+                      </el-image>
+                    </template>
+                  </el-table-column>
+
+                  <el-table-column prop="Phone" label="更多" width="160">
+                    <template slot-scope="scope">
+                      <el-button type="primary" @click="showDetail(scope.row)" plain>详情</el-button>
+                    </template>
+                  </el-table-column>
+                </el-table>
+              </el-tab-pane>
+              <el-tab-pane label="xls" name="xls">
+                <el-link download="w3logo" v-show='tableData.length>0' :href="xlsurl" type="warning">下载{{cityname}}.xsl
+                </el-link>
+                <div id="xlshtml"></div>
+              </el-tab-pane>
+            </el-tabs>
+          </el-main>
+          <el-footer style="text-align: center">
+            <div style="display: none">
+              <script type="text/javascript" language="JavaScript"
+                src="https://s4.cnzz.com/z_stat.php?id=1279925982&web_id=1279925982"></script>
+            </div>
+            host by
+            <el-link type="success" href="https://nba98.vercel.app/" target="_blank">nba98</el-link>
+          </el-footer>
+        </el-container>
+      </el-container>
+    </div>
+  </div>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
